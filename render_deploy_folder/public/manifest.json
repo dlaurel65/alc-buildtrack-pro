@@ -1,0 +1,21 @@
+{
+  "name": "BuildTrack Pro | Construction Management",
+  "short_name": "BuildTrack",
+  "description": "Enterprise Construction & Engineering Project Management",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1e293b",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='36' fill='%232563eb'/><text x='96' y='125' font-size='84' font-weight='900' fill='white' font-family='sans-serif' text-anchor='middle'>BP</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='96' fill='%232563eb'/><text x='256' y='330' font-size='220' font-weight='900' fill='white' font-family='sans-serif' text-anchor='middle'>BP</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
