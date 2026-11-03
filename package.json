@@ -1,0 +1,23 @@
+{
+  "name": "alc-buildtrack-pro",
+  "version": "1.0.0",
+  "description": "Enterprise Project Management Platform for Commercial Controls & Building Automation - Automated Logic Edition",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "automated-logic",
+    "construction-management",
+    "project-schedules",
+    "pay-applications",
+    "daily-logs",
+    "punch-list",
+    "commissioning"
+  ],
+  "author": "Daniel Laurel",
+  "license": "MIT"
+}
