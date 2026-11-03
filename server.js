@@ -5,9 +5,12 @@ const os = require('os');
 const zlib = require('zlib');
 
 const PORT = process.env.PORT || 3000;
-const DATA_FILE = path.join(__dirname, 'data', 'db.json');
-const PUBLIC_DIR = path.join(__dirname, 'public');
-const UPLOADS_DIR = path.join(__dirname, 'uploads');
+const BASE_DIR = (!fs.existsSync(path.join(__dirname, 'public')) && fs.existsSync(path.join(__dirname, 'render_deploy_folder', 'public')))
+  ? path.join(__dirname, 'render_deploy_folder')
+  : __dirname;
+const DATA_FILE = path.join(BASE_DIR, 'data', 'db.json');
+const PUBLIC_DIR = path.join(BASE_DIR, 'public');
+const UPLOADS_DIR = path.join(BASE_DIR, 'uploads');
 const INBOX_DIR = path.join(UPLOADS_DIR, 'inbox');
 
 // Ensure upload & inbox dirs exist
@@ -113,7 +116,7 @@ function parsePdfBuffer(buf, fileName) {
       if (streamBytes.length > 6 && streamBytes[0] === 0x78) {
         try {
           const decomp = zlib.inflateRawSync(streamBytes.slice(2, -4)).toString('utf8');
-          const tmRegex = /1\s+0\s+0\s+1\s+([\d\.]+)\s+([\d\.]+)\s+Tm[\r\n]+([\s\S]*?)(?=ET|\Z)/g;
+          const tmRegex = /1\s+0\s+0\s+1\s+([\d\.]+)\s+([\d\.]+)\s+Tm[\r\n]+([\s\S]*?)(?=ET|$)/g;
           let tmM;
           const blocks = [];
           while ((tmM = tmRegex.exec(decomp)) !== null) {
